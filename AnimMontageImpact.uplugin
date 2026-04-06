@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Anim Montage Impact",
+	"Description": "Generates sphere collision from fast-moving bones during AnimMontage playback. Fires hit events when the fastest bone exceeds a velocity threshold.",
+	"Category": "Gameplay",
+	"CreatedBy": "kokage",
+	"CreatedByURL": "mailto:kokage.fujieda84@gmail.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"FabURL": "",
+	"SupportURL": "mailto:kokage.fujieda84@gmail.com",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "AnimMontageImpact",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
