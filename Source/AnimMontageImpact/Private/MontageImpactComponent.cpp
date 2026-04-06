@@ -3,6 +3,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "Animation/AnimInstance.h"
 #include "GameFramework/Character.h"
+#include "Engine/Engine.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 
