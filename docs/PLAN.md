@@ -28,7 +28,6 @@
 | B12 | 低 | `GEngine` の null チェックなし（5箇所） | cpp:98,111,170,188,243 |
 | B13 | 低 | `EndPlay`/コンポーネント破棄時に `ImpactSphere` を破棄せず、デリゲートも解除しない | cpp:21-25 |
 | B14 | 低 | `CleanupExpiredCooldowns` が閾値超え時のみ実行 | cpp:106 |
-| B15 | 低 | `GetActiveCollision`/`IsImpactActive` が `BlueprintCallable`（const getter は `BlueprintPure` が適切） | h:70-75 |
 | B16 | 低 | `FastestBoneLocation.IsZero()` で「未検出」を判定（原点のボーンで誤動作） | cpp:87 |
 | B17 | 低 | `bDebugDraw` を途中変更すると `SetHiddenInGame` が更新されない | cpp:153 |
 | P1 | 中 | `.uplugin` に `"Installed": true`（ソース配布では付けない値） | uplugin:17 |
@@ -69,12 +68,15 @@ B1, B4, B6, B7, B9, B10。
 ### Phase 4: 仕上げ
 README 更新（日英）、CHANGELOG、`Icon128.png`、uplugin 整理、バージョン 1.1。
 
-## 4. 未決事項（ユーザー確認待ち）
+## 4. 確定事項（2026-10-01 ユーザー回答）
 
-1. 検出方式: 旧スフィア方式を残すか、スイープに置き換えるか
-2. 対応プラットフォーム（Win64 限定の意図）
-3. Phase 3 で実装する機能の範囲
-4. 相対速度モードをデフォルト ON にしてよいか（既存利用者の挙動が変わる）
+1. 検出方式: スイープ追加・旧スフィア方式も残す（`DetectionMode`、デフォルト Sweep）
+2. 対応プラットフォーム: Win64 のまま維持
+3. Phase 3: 複数ボーン同時判定＋ボーンフィルタ、AnimNotifyState の判定窓
+4. 相対速度モード: デフォルト ON
+
+未選択のため見送り: モンタージュ許可リスト、`bServerOnly`、BP API 拡張、無視クラス/タグのフィルタ（詳細は NOTES.md）。
+B15 は BP 互換性のため据え置き。
 
 ## 5. リスク
 
